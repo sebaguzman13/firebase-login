@@ -1,0 +1,11 @@
+.signout-btn {
+  background-color: grey;
+  align-self: flex-end;
+  max-width: fit-content;
+  padding-inline: 2em;
+}
+
+.signout-btn:hover {
+  background-color: rgb(235, 64, 64);
+  color: white;
+}

@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+It uses [Firebase](https://firebase.google.com/) to handle Authentication, in order for the Firebase conextion to work you have to create a `.env` file on the root directory and add your Firebase Credentials following [React](https://en.reactjs.org/'s syntax for enabling the auto discover by react-scripts.
+
+In this scenario you can check the `firebaseApp.ts` file to see all the needed credentials.
 ## Available Scripts
 
 In the project directory, you can run:
