@@ -1,8 +1,8 @@
-# React(Typescript) + Frebase Authentication
+# React (Typescript) + Frebase Authentication
 
 This is a Login/Register Project with [React](https://en.reactjs.org/) + [Typescript](https://www.typescriptlang.org/) and [Firebase](https://firebase.google.com/) to handle Authentication.
 
-For the Firebase conextion to work you'll have to have to create a `.env` file on the root directory and add your Firebase Credentials following [React](https://en.reactjs.org/'s syntax for enabling the auto discover by react-scripts, or you can wrote your credentials directly to the `./services/firebaseApp.ts` file.
+For the Firebase conextion to work you'll have to have to create a `.env` file on the root directory and add your Firebase Credentials following [React](https://en.reactjs.org/)'s syntax for enabling the auto discover by react-scripts, or you can wrote your credentials directly to the `./services/firebaseApp.ts` file.
 
 #### But remember not to commit your private credentials to public repositories.
 
@@ -16,8 +16,10 @@ For the Firebase conextion to work you'll have to have to create a `.env` file o
 ## Run
 
 To start the development project locally, write on your console:
-
-### `npm start`
+```
+npm install
+npm start
+```
 
 Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to check it out.
 
