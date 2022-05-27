@@ -1,0 +1,9 @@
+.petlist-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-btn {
+  font-size: 14px;
+  width: fit-content;
+}

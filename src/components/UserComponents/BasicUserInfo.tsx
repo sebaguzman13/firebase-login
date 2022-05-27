@@ -1,6 +1,7 @@
-import React, { ChangeEvent, EventHandler, useEffect, useState } from 'react'
-import { User, UserInfo } from 'firebase/auth';
+import React, { ChangeEvent, useState } from 'react'
+import { UserInfo } from 'firebase/auth';
 import './BasicUserInfo.css';
+import { Link } from 'react-router-dom';
 
 interface Props {
   user: UserInfo;
@@ -39,13 +40,16 @@ function BasicUserInfo(props: Props) {
 
         <label htmlFor='photoURL'>Avatar URL</label>
         <input name='photoURL' type={'string'} value={!isEdit ? props.user.photoURL ?? "" : editableUser?.photoURL ?? ""} onChange={handleChange} placeholder='Avatar URL' />
-        
-      </fieldset>
-      <div>
-      <img className='avatar' src="" alt="user avatar"/>
 
-      <button onClick={handleEdition}>{!isEdit ? 'Update Information' : 'Save'}</button>
-      {isEdit && <button onClick={handleEdition}>Cancel</button>}
+      </fieldset>
+      <div className="right-container">
+        <img className='avatar' src="" alt="user avatar" />
+        <div className='btns-container'>
+          <button onClick={handleEdition}>{!isEdit ? 'Update Information' : 'Save'}</button>
+          {isEdit && <button onClick={handleEdition}>Cancel</button>}
+        </div>
+
+        <Link to={'/my-pets'}>My Pets</Link>
       </div>
     </div>
   )

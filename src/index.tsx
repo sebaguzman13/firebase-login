@@ -7,22 +7,24 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './components/Login/Login';
 import LandingPage from './components/LandingPage/LandingPage';
 import ProfileScreen from './components/UserComponents/ProfileScreen';
+import MyPetsScreen from './components/UserComponents/MyPetsScreen';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-      <BrowserRouter>
-        <Routes>
-          <Route path={'/'} element={<App />}>
-            <Route index element={<LandingPage />} />
-            <Route path={'login'} element={<Login />} />
-            <Route path={'register'} element={<Login register/>} />
-            <Route path={'profile'} element={<ProfileScreen/>} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+    <BrowserRouter>
+      <Routes>
+        <Route path={'/'} element={<App />} >
+          <Route index element={<LandingPage />} />
+          <Route path={'login'} element={<Login />} />
+          <Route path={'register'} element={<Login register />} />
+          <Route path={'profile'} element={<ProfileScreen />} />
+          <Route path={"my-pets"} element={<MyPetsScreen />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

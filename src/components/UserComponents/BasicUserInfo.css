@@ -2,6 +2,10 @@
   display: flex;
   flex-grow: 1;
   width: 100%;
+  padding: 1.5em;
+  border: 1px solid grey;
+  border-radius: 5px;
+  background-color: white;
 }
 
 .user-form fieldset {
@@ -10,7 +14,9 @@
   max-width: 60%;
   flex-flow: column;
   height: fit-content;
-  padding: 2em 1em;
+  padding: 1.5em;
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 5px;
 }
 
 fieldset label,
@@ -26,30 +32,33 @@ fieldset input {
   padding-left: 1ch;
 }
 
-.user-form div {
-  padding-inline: 1em;
-  width: 50%;
-  text-align: center;
+.user-form .right-container {
+  width: 100%;
+  min-width: 300px;
 }
 
 .user-form img.avatar {
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 100%;
   width: 150px;
   height: 150px;
   min-width: 150px;
   min-height: 150px;
   background-color: rgb(226, 224, 111);
   display: block;
-  padding-inline: 1em;
   margin: auto;
   margin-bottom: 1em;
   box-shadow: 0 0 2px grey;
 }
 
+.user-form div .btns-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .user-form button {
   width: fit-content;
-  margin: auto;
   font-size: 0.85em;
   margin-top: 2em;
 }

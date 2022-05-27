@@ -1,6 +1,6 @@
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, User, signOut, updateProfile } from "firebase/auth";
-import path from "path";
-import { useNavigate, useResolvedPath } from "react-router-dom";
+import Pet from "../../models/Pet";
+import { fakePets } from "../../utils/mocks/Pets";
 import firebaseApp from "./firebaseApp";
 
 const auth = getAuth(firebaseApp);
@@ -61,16 +61,26 @@ export const isUserSignedIn = () => {
   return !!auth.currentUser;
 }
 
-// TODO use a valid assests URL for the placeholder
+// TODO use a valid assets URL for the placeholder
 export const getProfilePicUrl = () => {
   return auth.currentUser?.photoURL || '/images/profile_placeholder.png';
 }
 
-export const getUserName = () => {
+export const getUserName = (): string | null => {
   return auth.currentUser?.displayName || "";
 }
 
-export const getLoggedUser = () => {
+export const getLoggedUser = (): User | null => {
   return auth.currentUser;
 }
 
+export const getMyPets = (): Pet[] => {
+  // TODO add fireStore connection to save pets
+  return [...fakePets];
+}
+
+export const addPet = (pet: Pet): Pet[] => {
+  // TOOD add firebase backend call
+  let currentUserPets: Pet[] = []
+  return [...currentUserPets, pet]
+}

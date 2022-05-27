@@ -1,7 +1,7 @@
-import React, { useLayoutEffect, useState } from 'react'
-import { signOut, User, UserInfo } from 'firebase/auth';
+import { useLayoutEffect, useState } from 'react'
+import { User, UserInfo } from 'firebase/auth';
 import BasicUserInfo from './BasicUserInfo';
-import { getLoggedUser, getUserName, signOutUser, updateUser } from './../../services/Firebase/authentication';
+import { getLoggedUser, signOutUser, updateUser } from './../../services/Firebase/authentication';
 import './ProfileScreen.css';
 
 export default function ProfileScreen() {

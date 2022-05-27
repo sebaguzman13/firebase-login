@@ -1,10 +1,9 @@
 import React from 'react'
 import './LandingPage.css'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function LandingPage() {
   const navigate = useNavigate();
-
 
   return (
     <div className='landing-page'>

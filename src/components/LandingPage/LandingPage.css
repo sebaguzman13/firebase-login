@@ -3,18 +3,17 @@
   flex-flow: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.43);
+  background-color: rgba(255, 255, 255, .71);
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, .124);
   padding: 4em 8em;
   align-self: center;
-  height: 60vh;
-  min-width: 40vw;
   max-width: 600px;
   box-shadow: 0 0 5px azure;
 }
 
 button {
+  font-weight: 600;
   padding: 0.5em 1em;
   background-color: rgb(167, 204, 236);
   border: none;
