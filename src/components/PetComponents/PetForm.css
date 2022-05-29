@@ -1,6 +1,20 @@
+.pet-form-container {
+  display: flex;
+  flex-flow: column;
+  margin: auto;
+  padding: 2em;
+  background-color: aliceblue;
+  border-radius: 5px;
+  min-width: 300px;
+}
+
 .pet-form textarea {
   resize: none;
   padding: 0.5em 0.5em;
   border-radius: 3px;
   margin: 1em;
+}
+
+.in-modal {
+  background-color: transparent;
 }

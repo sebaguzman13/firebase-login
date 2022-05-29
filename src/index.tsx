@@ -8,6 +8,7 @@ import Login from './components/Login/Login';
 import LandingPage from './components/LandingPage/LandingPage';
 import ProfileScreen from './components/UserComponents/ProfileScreen';
 import MyPetsScreen from './components/UserComponents/MyPetsScreen';
+import PetForm from './components/PetComponents/PetForm';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -22,6 +23,7 @@ root.render(
           <Route path={'register'} element={<Login register />} />
           <Route path={'profile'} element={<ProfileScreen />} />
           <Route path={"my-pets"} element={<MyPetsScreen />} />
+          <Route path={"my-pets/info"} element={<PetForm cancelButton />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -7,22 +7,20 @@ const auth = getAuth(firebaseApp);
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
+    console.log("Received user", user)
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
     // TODO review if all this information is needed
     localStorage.setItem('u', JSON.stringify(user));
-    // ...
   } else {
     // User is signed out
     localStorage.removeItem('u');
-    // ...
   }
 });
 
 export const signUp = async (email: string, password: string) => createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed up
-    // ...
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -33,7 +31,6 @@ export const signUp = async (email: string, password: string) => createUserWithE
 
 export const signIn = async (email: string, password: string) => signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
-    // Signed in
     const user = userCredential.user;
     localStorage.setItem('u', JSON.stringify(user))
   })
@@ -61,7 +58,6 @@ export const isUserSignedIn = () => {
   return !!auth.currentUser;
 }
 
-// TODO use a valid assets URL for the placeholder
 export const getProfilePicUrl = () => {
   return auth.currentUser?.photoURL || '/images/profile_placeholder.png';
 }
@@ -73,14 +69,12 @@ export const getUserName = (): string | null => {
 export const getLoggedUser = (): User | null => {
   return auth.currentUser;
 }
-
+// TODO add firestore
 export const getMyPets = (): Pet[] => {
-  // TODO add fireStore connection to save pets
   return [...fakePets];
 }
 
 export const addPet = (pet: Pet): Pet[] => {
-  // TOOD add firebase backend call
   let currentUserPets: Pet[] = []
   return [...currentUserPets, pet]
 }

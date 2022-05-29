@@ -5,6 +5,9 @@ import './PetForm.css';
 
 interface PetFormProps {
   onSubmit?: Function;
+  cancelButton?: boolean;
+  pet?: Pet;
+  noBgColor?: boolean;
 }
 
 const initialValues = { name: "", kind: "", age: 0, description: "" };
@@ -25,24 +28,22 @@ function PetForm(props: PetFormProps) {
   const handleSubmit = (data: FormEvent<HTMLFormElement>) => {
     data.preventDefault();
     props.onSubmit && props.onSubmit(pet);
-    data.currentTarget.reset();
-    goBack();
+    setPet({...initialValues});
   }
 
   const goBack = () => { navigate(-1) }
 
   return (
-    <div>
-      <Outlet/>
+    <div className={`pet-form-container ${props.noBgColor ? "in-modal" : ""}`}>
       <h2>Pet Information</h2>
-      <form onSubmit={handleSubmit} className={'pet-form'}>
+      <form onSubmit={handleSubmit} className={`pet-form`}>
         <input id="name" type="text" placeholder="Name" required readOnly={!!location.state} onChange={handleChange} value={pet.name}/>
         <input id="kind" type="text" placeholder="Kind" required readOnly={!!location.state} onChange={handleChange} value={pet.kind}/>
         <input id="age" type="number" placeholder="Age" min={1} step={1} readOnly={!!location.state} onChange={handleChange} value={pet.age}/>
         <textarea id="description" placeholder="Description" rows={5} readOnly={!!location.state} onChange={handleChange} value={pet.description}/>
 
         {!!!location.state && <button type={'submit'}>Submit</button>}
-        <button type="button" onClick={goBack}>Back</button>
+        {props.cancelButton && <button type="button" onClick={goBack}>Back</button>}
       </form>
     </div>
   )

@@ -1,3 +1,4 @@
+/* rgb(100, 50, 108) -> veterinarian violet */
 .user-form {
   display: flex;
   flex-grow: 1;
@@ -10,12 +11,11 @@
 
 .user-form fieldset {
   display: flex;
-  width: 50%;
-  max-width: 60%;
+  flex-grow: 1;
   flex-flow: column;
   height: fit-content;
   padding: 1.5em;
-  border: 1px solid rgba(0, 0, 0, .1);
+  border: none;
   border-radius: 5px;
 }
 
@@ -25,16 +25,28 @@ input {
 }
 
 fieldset input {
-  border-radius: 5px;
-  border: none;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  padding-left: 1ch;
+  border-radius: 30px;
+  border: 1px solid grey;
+  padding: 0.5em 2ch;
+  width: 100%;
+}
+
+fieldset input:disabled {
+  border: 1px solid transparent;
 }
 
 .user-form .right-container {
-  width: 100%;
+  width: 50%;
   min-width: 300px;
+}
+
+.right-container {
+  display: flex;
+  flex-flow: column;
+}
+
+.right-container button {
+  margin: auto;
 }
 
 .user-form img.avatar {
@@ -53,12 +65,28 @@ fieldset input {
 
 .user-form div .btns-container {
   display: flex;
-  justify-content: center;
   width: 100%;
 }
 
 .user-form button {
   width: fit-content;
   font-size: 0.85em;
-  margin-top: 2em;
+  margin-top: 1em;
+}
+.user-form button.save {
+  margin-right: 0.5em;
+  background-color: rgba(207, 68, 207, 0.7);
+}
+
+.user-form button:hover {
+  background-color: rgba(207, 68, 207, 1);
+}
+
+.user-form button.cancel {
+  margin-left: 0.5em;
+  background-color: rgba(221, 65, 65, 0.6);
+}
+
+.user-form button.cancel:hover {
+  background-color: rgb(221, 65, 65);
 }

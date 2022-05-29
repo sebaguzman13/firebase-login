@@ -1,9 +1,51 @@
+.petlist-container {
+  width: 100%;
+}
+
 .petlist-header {
   display: flex;
   justify-content: space-between;
 }
 
+.petlist-header h3 {
+  align-self: center;
+}
+
+.petlist-items {
+  list-style-type: none;
+  list-style-position: outside;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding: 0;
+}
+
+.petlist-items li {
+  background-color: rgb(100,50,108);
+  border-radius: 30px;
+  color: white;
+  padding: 0.5em 2ch;
+  margin-bottom: 0.5em;
+}
+
+.petlist-items li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.petlist-items li:hover {
+  background-color: rgba(100,50,108,.62);
+  color: rgb(100,50,108);
+  cursor: pointer;
+}
+
+.petlist-items li a:hover {
+  color: rgb(100,50,108);
+}
+
 .add-btn {
-  font-size: 14px;
+  font-size: 1em;
   width: fit-content;
+  border-radius: 100%;
+  padding: 1.5em 1em;
 }
