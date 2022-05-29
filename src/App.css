@@ -16,7 +16,7 @@
   top: -250px;
   padding: 400%;
   z-index: -1;
-  background-image: repeating-linear-gradient(90deg, rgba(19, 154, 255, .31) 0%, rgba(255, 254, 138, .41) 20%, rgba(80, 9, 121, 1) 52%, rgba(19, 154, 255, .31) 90%);
+  background-image: repeating-linear-gradient(90deg, rgba(19, 154, 255, .31) 0%, rgba(255, 254, 138, .41) 20%, rgb(132, 49, 180) 52%, rgba(19, 154, 255, .31) 90%);
   background-repeat: repeat;
   position: absolute;
   animation: rotate-360 69s linear infinite forwards;

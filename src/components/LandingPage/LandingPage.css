@@ -2,14 +2,20 @@
   display: flex;
   flex-flow: column;
   align-items: center;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, .71);
+  /* justify-content: center; */
+  align-self: center;
+  background-color: rgba(255, 255, 255, .91);
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, .124);
-  padding: 4em 8em;
-  align-self: center;
-  max-width: 600px;
   box-shadow: 0 0 5px azure;
+  padding: 4em 8em;
+  max-width: 600px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.landing-page>p {
+  margin-top: 8em;
 }
 
 button {
@@ -38,4 +44,19 @@ button.register:hover {
   box-shadow: 0 0 1px grey;
   color: rgb(21, 114, 236);
   background-color: rgb(255, 244, 232);
+}
+
+@media (max-width: 1000px) {
+  .landing-page {
+    width: 100%;
+    height: auto;
+    scroll-behavior: auto;
+    align-self: auto;
+    overflow-x: hidden;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+  .login-avatar {
+    width: 90%;
+  }
 }

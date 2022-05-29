@@ -1,8 +1,12 @@
+import './LoginForm.css'
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { signIn, signUp } from '../../services/Firebase/authentication';
-import './LoginForm.css'
+import dogHeartIcon from "../../assets/icons8-dog-heart-pastel-glyph-32.png"
+import retrieverFaceSvg from "../../assets/retriever_face.svg";
 
+import Avatar from '../common/Avatar';
+import Login from './Login';
 interface LoginData {
   email: string;
   password: string;
@@ -46,12 +50,12 @@ export default function LoginForm(props: LoginFormProps) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>{props.register ? 'Register' : 'Login'}</h1>
+      <Avatar src={retrieverFaceSvg} width={"40%"} className={'login-avatar'}/>
+      <h1>{props.register ? 'Register' : 'Welcome'}</h1>
       <input type={'email'} name="email" placeholder="Email..." value={formData.email} onChange={handleChange} />
       <input type={'password'} name="password" placeholder="Password..." value={formData.password} onChange={handleChange} />
       <div className='button-container'>
-        <button type='submit'>Submit</button>
-        <button className='cancel' type='button' onClick={() => navigate('/')}>Cancel</button>
+        <button type='submit'>{props.register ? 'Register' : 'Login'}</button>
       </div>
     </form>
   )
